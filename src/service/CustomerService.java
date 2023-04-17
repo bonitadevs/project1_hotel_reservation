@@ -8,14 +8,14 @@ import java.util.Map;
 
 
 public class CustomerService {
-    private Map<String, Customer> customers = new HashMap<>();
+    private static final Map<String, Customer> customers = new HashMap<>();
     public void addCustomer(String email, String firstName, String lastName){
         Customer customer = new Customer(email, firstName, lastName);
         customers.put(email, customer);
 
     }
     public Customer getCustomer(String customerEmail){
-        return customers.get(customerEmail)
+        return customers.get(customerEmail);
     }
     public static Collection<Customer> getAllCustomers(){
         return customers.values();

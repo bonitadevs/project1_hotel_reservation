@@ -2,7 +2,7 @@ package model;
 
 public class Room implements IRoom{
 
-    //implements the features from IRoom interface by creating thr variables to store the values in.
+    //implements the features from IRoom interface by creating the variables to store the values in.
     private String roomNumber;
     private double price;
     private RoomType roomType;
