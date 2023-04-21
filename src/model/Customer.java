@@ -3,20 +3,28 @@ package model;
 import java.util.regex.Pattern;
 
 public class Customer {
-    private String firstName;
-    private String lastName;
-    private String email;
+    private final String firstName;
+    private final String lastName;
+    private final String email;
 
-    private final String emailRegX = "^(.+)@(.+).(.+)$";
-    private final Pattern pattern = Pattern.compile(emailRegX);
+    public static String emailRegX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
-    public Customer(String first, String second, String mail) {
-        if (!pattern.matcher(mail).matches()) {
-            throw new IllegalArgumentException("Invalid email format. Please reenter your email.");
-        }
-        this.firstName = first;
-        this.lastName = second;
-        this.email = mail;
+    public Customer(String email, String firstName, String lastName) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.emailPattern(email);
+    }
+
+    private void emailPattern(String email) {
+        Pattern pattern = Pattern.compile(emailRegX);
+        //added exception to MainMenu
+    }
+
+
+    public String getEmail() {
+        return this.email;
     }
 
     @Override

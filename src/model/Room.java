@@ -39,7 +39,7 @@ public class Room implements IRoom{
 //the overrides above overrides the methods from the IRoom interface to include the return values of the room features
     @Override
     public String toString() {
-        return "Room: " +
+        return
                 "Room Number:'" + roomNumber + '\'' +
                 ", Price:" + price +
                 ", Room Type:" + roomType +

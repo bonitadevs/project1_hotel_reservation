@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Reservation {
     private Customer customer;
@@ -55,4 +56,26 @@ public class Reservation {
                 ", Check Out: " + checkOutDate +
                 '}';
     }
-}
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customer, room, checkInDate, checkOutDate);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+            Reservation other = (Reservation) o;
+            return Objects.equals(customer, other.customer)
+                    && Objects.equals(room, other.room)
+                    && Objects.equals(checkInDate, other.checkInDate)
+                    && Objects.equals(checkOutDate, other.checkOutDate);
+        }
+
+    }
+

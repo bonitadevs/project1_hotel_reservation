@@ -14,8 +14,8 @@ public class CustomerService {
         customers.put(email, customer);
 
     }
-    public Customer getCustomer(String customerEmail){
-        return customers.get(customerEmail);
+    public Customer getCustomer(String email){
+        return customers.get(email);
     }
     public static Collection<Customer> getAllCustomers(){
         return customers.values();
